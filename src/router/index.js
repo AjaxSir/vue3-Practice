@@ -1,16 +1,21 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router';
 import dash1 from '@/views/dashboard/index.vue'
 import dash2 from '@/views/dashboard/index2.vue'
 const routers = [{
-        path: '/',
+        path: '/dash',
         component: dash1
     },
     {
         path: '/index2',
-        component: dash2
+        name: 'index2',
+        component: dash2,
+        beforeEnter: (to, from, next) => {
+            console.log(from, 'from route', to)
+            next()
+        }
     }
 ]
 export default createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory(),
     routes: routers
 })
