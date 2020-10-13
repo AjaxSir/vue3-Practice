@@ -1,5 +1,6 @@
 <template>
-  <button @click='back'>back</button>
+  <button v-input-animate @click='back'>back</button>
+  <input v-input-focus type="text">
 </template>
 <script>
 import { useRouter, useRoute } from 'vue-router'
