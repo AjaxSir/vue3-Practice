@@ -5,15 +5,20 @@
     "build": "webpack --env.prod"
   },
   "dependencies": {
+    "element-ui": "^2.13.2",
+    "normalize.css": "^8.0.1",
     "vue": "^3.0.0-rc.9",
     "vue-router": "^4.0.0-beta.13",
     "vuex": "^4.0.0-beta.4"
   },
   "devDependencies": {
     "@vue/compiler-sfc": "^3.0.0-rc.9",
-    "css-loader": "^4.2.2",
+    "css-loader": "^4.3.0",
     "file-loader": "^6.0.0",
     "mini-css-extract-plugin": "^0.11.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^10.0.3",
+    "style-loader": "^2.0.0",
     "url-loader": "^4.0.0",
     "vue-loader": "^16.0.0-beta.5",
     "webpack": "^4.42.1",

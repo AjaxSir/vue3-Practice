@@ -1,10 +1,10 @@
 <template>
 2
-  <span>{{name}}</span>
+  <span class="name">{{name}}</span>
   <div :ref='getRef'>获取ref</div>
   <button @click='changeName'>changeName</button>
   <div></div>
-  <ul>
+  <ul class="ul">
     <li v-for="(item, idx) in list" :key='idx'>{{item}}</li>
   </ul>
   {{ num }}
@@ -87,9 +87,17 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang='scss'>
+.name{
+  font-size: 24px;
+}
 img {
   width: 200px;
+}
+.ul{
+  li{
+    font-size: 20px;
+  }
 }
 h1 {
   font-family: Arial, Helvetica, sans-serif;
