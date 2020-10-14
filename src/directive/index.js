@@ -1,4 +1,4 @@
-const directives = require.context('./', true, /\.js/)
+const directives = require.context('./', true, /^((?!index).)*$/) // 非index字符串 /\input|index/
 const direcObj = {}
 directives.keys().forEach(element => {
     const directivesConfig = directives(element)
@@ -7,8 +7,7 @@ directives.keys().forEach(element => {
         .replace(/\.\w+$/, '')
         .split('./')
         .join('')
-    if (name !== 'index') {
-        direcObj[name] = directivesConfig
-    }
+
+    direcObj[name] = directivesConfig
 });
 export default direcObj
