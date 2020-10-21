@@ -28,6 +28,7 @@ export default {
   setup() {
     const userLocation = inject('location')
     const updataLocation = inject('updataLocation')
+    const formatTimeOther = inject('formatTimeOther')
     const { ctx, proxy } = getCurrentInstance(); // 使用ctx 在生产环境下报错 应使用proxy
     const router = useRouter()
     const routeInfo = useRoute()
@@ -72,8 +73,9 @@ export default {
       console.log(userLocation.value, 'start')
       updataLocation()
       console.log(userLocation.value, 'change')
-      console.log(ctx.$formatTime(new Date())) // 使用全局变量、方法
-      console.log(proxy.$formatTime(new Date())) // 使用全局变量、方法
+      console.log(ctx.$formatTime(new Date()), '使用全局变量、方法')
+      console.log(proxy.$formatTime(new Date()), '使用全局变量、方法')
+      console.log(formatTimeOther(new Date()), '推荐使用的全局变量、方法')
       console.log('加载完成')
     })
     watch(name,

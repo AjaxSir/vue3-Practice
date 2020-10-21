@@ -5,6 +5,8 @@
 
 <script>
 import { ref, readonly, provide } from 'vue';
+import { formatTime } from './util'
+
 export default {
   setup() {
     let location=ref('location')
@@ -16,6 +18,7 @@ export default {
         包裹后只能通过updataLocation()方法改变*/
         provide('location',readonly(location))
         provide('updataLocation',updataLocation)
+        provide('formatTimeOther', formatTime)
   }
 }
 </script>
