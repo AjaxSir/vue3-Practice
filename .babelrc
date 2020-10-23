@@ -1,0 +1,11 @@
+
+{
+  "plugins": [
+    ["import", {
+      "libraryName": "antd",
+      "libraryDirectory": "es",
+      "style": "css" // `style: true` 会加载 less 文件
+    }]
+  ]
+}
+// 我按照这个写法配置在.babelrc之后,发现样式始终引不进去.查看官网发现原来是"libraryDirectory":"es"这里的问题,这里面默认是lib,我们需要把"es"换成"lib"即可.

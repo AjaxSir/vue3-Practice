@@ -11,6 +11,8 @@
   <br />
   {{ newNum }}
   <br />
+  <a-button>111</a-button>
+  <a-rate v-model:value="rateVal" />
   <children :value='name' @toParent='fromChild'></children>
   <button @click='toPath'>to index2</button>
 </template>
@@ -47,6 +49,7 @@ export default {
       console.dir(divRef)
     })
     const name = ref('sxl')
+    const rateVal = ref(2)
     const methods = {
       changeName: () => {
         name.value = 'sxlsxlslx'
@@ -95,6 +98,7 @@ export default {
       ...toRefs(data),
       name,
       getRef,
+      rateVal,
       newNum
     }
   }
